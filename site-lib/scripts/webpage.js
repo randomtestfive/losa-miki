@@ -1,6 +1,6 @@
 "use strict";
 (() => {
-  localStorage.setItem("theme", "dark")
+  localStorage.setItem("theme", "dark");
   var t = (t, e, i) => {
       if (!e.has(t)) throw TypeError("Cannot " + i);
     },
