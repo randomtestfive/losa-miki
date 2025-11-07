@@ -4401,7 +4401,7 @@
           });
       }
       switchTheme() {
-        let t = "light" == localStorage.getItem("theme") ? "dark" : "light";
+        let t = "light" == "dark"; //localStorage.getItem("theme") ? "dark" : "light";
         this.setTheme(t, !1);
       }
       setTheme(t, e = !1) {
