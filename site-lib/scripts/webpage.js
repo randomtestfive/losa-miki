@@ -4399,6 +4399,7 @@
           this.themeToggle?.addEventListener("change", (t) => {
             this.switchTheme();
           });
+        this.switchTheme();
       }
       switchTheme() {
         let t = "light" == "dark"; //localStorage.getItem("theme") ? "dark" : "light";
@@ -4429,7 +4430,7 @@
             setTimeout(function () {
               document.body.style.transition = s;
             }, 100),
-          localStorage.setItem("theme", i ? "light" : "dark");
+          localStorage.setItem("theme", i ? "dark" : "dark");
       }
     },
     ie = class extends Zt {
