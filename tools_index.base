@@ -1,0 +1,48 @@
+filters:
+  and:
+    - file.inFolder("tools")
+    - file.ext == "md"
+formulas:
+  mechanics: file.tags.filter(value.startsWith("#mechanics"))
+  uses: 'file.tags.filter(value.startsWith("#uses")) '
+properties:
+  file.name:
+    displayName: file
+views:
+  - type: table
+    name: tools
+    filters:
+      and:
+        - file.inFolder("tools")
+        - file.ext == "md"
+    order:
+      - file.name
+      - name
+      - uses
+      - layer
+      - formula.mechanics
+      - formula.uses
+    sort:
+      - property: file.name
+        direction: ASC
+      - property: formula.mechanics
+        direction: ASC
+    columnSize:
+      formula.mechanics: 431
+  - type: cards
+    name: mortal
+    filters:
+      and:
+        - file.tags.contains("mechanics/mortal")
+    order:
+      - name
+    image: note.icon
+    imageFit: contain
+    cardSize: 100
+  - type: cards
+    name: pellet
+    filters:
+      and:
+        - file.tags.contains("mechanics/pellet")
+    image: note.icon
+    cardSize: 100
