@@ -1,5 +1,6 @@
 "use strict";
 (() => {
+  localStorage.setItem("theme", "dark")
   var t = (t, e, i) => {
       if (!e.has(t)) throw TypeError("Cannot " + i);
     },
@@ -4399,7 +4400,6 @@
           this.themeToggle?.addEventListener("change", (t) => {
             this.switchTheme();
           });
-        this.switchTheme();
       }
       switchTheme() {
         let t = "light" == "dark"; //localStorage.getItem("theme") ? "dark" : "light";
